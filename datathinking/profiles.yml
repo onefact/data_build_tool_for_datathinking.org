@@ -1,0 +1,15 @@
+datathinking:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: /tmp/dbt.duckdb
+      # path: '/Users/me/Downloads/311_Service_Requests_from_2010_to_Present.csv'
+      # path: 's3://datathinking.org/311_Service_Requests_from_2010_to_Present.csv'
+      extensions:
+        - httpfs
+        - parquet
+      settings:
+        s3_region: us-east-1
+        # s3_access_key_id: "{{ env_var('S3_ACCESS_KEY_ID') }}"
+        # s3_secret_access_key: "{{ env_var('S3_SECRET_ACCESS_KEY') }}"
