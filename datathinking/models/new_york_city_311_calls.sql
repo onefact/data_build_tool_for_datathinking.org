@@ -1,4 +1,4 @@
-SELECT * FROM read_csv('/Users/me/Downloads/311_Service_Requests_from_2010_to_Present.csv', 
+SELECT * FROM read_csv('https://data.cityofnewyork.us/api/views/erm2-nwe9/rows.csv?accessType=DOWNLOAD', 
                        header=True, 
                        delim=',', 
                        quote='\"', 
