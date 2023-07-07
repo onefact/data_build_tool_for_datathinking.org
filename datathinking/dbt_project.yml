@@ -33,5 +33,5 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   datathinking:
     # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
+    cityofnewyork.us:
+      +materialized: table # view or table: https://docs.getdbt.com/docs/build/materializations

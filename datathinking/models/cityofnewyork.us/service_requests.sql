@@ -1,8 +1,10 @@
-SELECT * FROM read_csv('https://data.cityofnewyork.us/api/views/erm2-nwe9/rows.csv?accessType=DOWNLOAD', 
+-- source: https://data.cityofnewyork.us/api/views/erm2-nwe9/rows.csv?accessType=DOWNLOAD
+-- via: https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9
+SELECT * FROM read_csv('https://public.datathinking.org/cityofnewyork.us%2F311-Service-Requests-from-2010-to-Present.csv', 
                        header=True, 
                        delim=',', 
-                       quote='\"', 
-                       ignore_errors=True,
+                       quote='"', 
+                       ignore_errors=False,
                        columns={'Unique Key': 'BIGINT',
                                 'Created Date': 'VARCHAR',
                                 'Closed Date': 'VARCHAR',
@@ -45,3 +47,8 @@ SELECT * FROM read_csv('https://data.cityofnewyork.us/api/views/erm2-nwe9/rows.c
                                 'Longitude': 'DOUBLE',
                                 'Location': 'VARCHAR'}
                     )
+-- LIMIT 1000 -- DEBUG
+-- TIMING on macbook pro: 16:44:46  1 of 1 OK created sql table model main.service_requests ........................ [OK in 2944.05s]
+-- 22:21:23  1 of 1 OK created sql table model main.service_requests ........................ [OK in 2751.54s]
+-- THEN need to run `duckdb /tmp/service_requests.duckdb` and `COPY service_requests TO '/tmp/service_requests.parquet' (FORMAT 'PARQUET', CODEC 'ZSTD');` and copy to s3
+-- COPY to s3: `aws s3 cp /tmp/service_requests.parquet s3://datathinking.org/cityofnewyork.us/ --profile me@laptop-datascientist`

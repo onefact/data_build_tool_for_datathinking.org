@@ -3,9 +3,10 @@ datathinking:
   outputs:
     dev:
       type: duckdb
-      path: /tmp/new_york_city_311_calls.duckdb
+      path: /tmp/service_requests.duckdb
       # path: '/Users/me/Downloads/311_Service_Requests_from_2010_to_Present.csv'
       # path: 's3://datathinking.org/311_Service_Requests_from_2010_to_Present.csv'
+      threads: 4
       extensions:
         - httpfs
         - parquet
