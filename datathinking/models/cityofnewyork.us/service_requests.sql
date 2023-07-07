@@ -1,6 +1,7 @@
 -- source: https://data.cityofnewyork.us/api/views/erm2-nwe9/rows.csv?accessType=DOWNLOAD
 -- via: https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9
 -- yields: https://public.datathinking.org/cityofnewyork.us%2Fservice_requests.parquet
+-- code example: https://nbviewer.org/github/onefact/datathinking.org-codespace/blob/main/notebooks/princeton-university/week-1-visualizing-33-million-phone-calls-in-new-york-city.ipynb
 SELECT * FROM read_csv('https://public.datathinking.org/cityofnewyork.us%2F311-Service-Requests-from-2010-to-Present.csv', 
                        header=True, 
                        delim=',', 
