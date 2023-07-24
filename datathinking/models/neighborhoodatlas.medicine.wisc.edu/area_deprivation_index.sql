@@ -14,15 +14,5 @@ FROM read_csv('/Users/me/Downloads/adi-download/US_2021_ADI_Census Block Group_v
            'GISJOIN': 'VARCHAR',
            'ADI_NATRANK': 'VARCHAR',
            'ADI_STATERNK': 'VARCHAR',
-           'FIPS': 'VARCHAR'}
+           'FIPS': 'BIGINT'}
 )
--- FROM read_csv('/Users/me/Downloads/adi-download/US_2021_ADI_Census Block Group_v4.csv', 
---   header=True, 
---   delim=',',
---   quote='"',
---   columns={'INDEX': 'INT',
---            'GISJOIN': 'VARCHAR',
---            'ADI_NATRANK': 'VARCHAR',  
---            'ADI_STATERNK': 'VARCHAR',
---            'FIPS': 'VARCHAR'})
--- -- LIMIT 10;
