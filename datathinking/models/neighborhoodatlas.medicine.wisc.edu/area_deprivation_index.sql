@@ -9,7 +9,7 @@ WITH import_adi AS (
                                   'GISJOIN': 'VARCHAR',
                                   'ADI_NATRANK': 'VARCHAR',
                                   'ADI_STATERNK': 'VARCHAR',
-                                  'FIPS': 'BIGINT'}
+                                  'FIPS': 'VARCHAR'}
                         )
 ),
 replace_nulls AS (
