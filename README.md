@@ -1,9 +1,16 @@
 # data_build_tool_for_datathinking.org
 Using dbt to explore datathinking.org datasets.
 
+## Steps to build a dataset for hosting on public.datathinking.org
+
+1. Install dbt and its duckdb extension using one command:  `pip3 install dbt-duckdb` (https://github.com/jwills/dbt-duckdb)
+2. Clone this repository, in Visual Studio code or on terminal.
+3. On the terminal command line, enter the `datathinking` directory: `cd datathinking`
+4. Execute `dbt run`, or to select only one of the models, `dbt run --select census.gov` (this will select the `census.gov` model and all of its dependencies here: https://github.com/onefact/data_build_tool_for_datathinking.org/tree/main/datathinking/models/census.gov).
+
+
 ## Steps to initialize `dbt`
 
-1. Install `dbt` using `pip3 install dbt-duckdb` (https://github.com/jwills/dbt-duckdb)
 2. Run `dbt init` and enter `datathinking` as the project name
 3. Create `profiles.yml` in the `datathinking` directory with the following contents:
 
